@@ -1,0 +1,49 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="cstm-head">Contact Request</div>
+<select name="pageSelection" id="pageSelection">
+
+        <option value="GeneralInquiry">General Inquiry</option>
+        <option value="Service">Service</option>
+        <option value="Appraisal" selected>Appraisal</option>
+        <option value="CarFinder">Car Finder</option>
+    </select>
+
+ <script>
+        // Listen for changes in the dropdown selection
+        $('#pageSelection').change(function() {
+            // Get the selected option's value (URL)
+            var selectedUrl = $(this).val();
+
+            // Redirect to the selected URL
+            //window.location.href = selectedUrl;
+
+        if (selectedUrl === 'GeneralInquiry') {
+                $('#cstm-contactform').show();
+                 $('#cstm-carfinder').hide();
+                  $('#cstm-appraisal').hide();
+        }
+         if (selectedUrl === 'Service') {
+                $('#cstm-contactform').show();
+                 $('#cstm-carfinder').hide();
+                  $('#cstm-appraisal').hide();
+        }
+         if (selectedUrl === 'Appraisal') {
+                $('#cstm-contactform').hide();
+                 $('#cstm-carfinder').hide();
+                  $('#cstm-appraisal').show();
+        }
+           if (selectedUrl === 'CarFinder') {
+                $('#cstm-contactform').hide();
+                 $('#cstm-carfinder').show();
+                  $('#cstm-appraisal').hide();
+        }
+        });
+$(window).on('load', function() {
+    var selectedUrl = $('#pageSelection').val();
+    if (selectedUrl === 'Appraisal') {
+           $('#cstm-contactform').hide();
+                 $('#cstm-carfinder').hide();
+                  $('#cstm-appraisal').show();
+    }
+});
+    </script>
