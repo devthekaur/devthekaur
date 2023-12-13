@@ -1,0 +1,54 @@
+<style>
+
+  
+</style>
+<div class="wrappercstm">
+  <div class="page-width wrapper">
+    <div class="cstmgrid__item">
+      <div class="callout">
+      <h2 class="dev-time" ><strong>{{ section.settings.cstmtext }}</strong></h2> 
+      <p class="heart-dev">{{ section.settings.devtext }}</p>
+      </div>
+      <div class="cstm-video">
+    <video src="{{section.settings.video.sources[1].url}}" loop muted playsinline autoplay></video>
+      </div>
+</div>
+      </div> 
+    </div>
+     
+
+{% schema %}
+{
+"name": "cstm-video-text",
+
+"settings": [
+{
+  "id" : "cstmtext",
+  "type" : "richtext",
+  "label" : "richtext"
+ 
+},
+   {
+      "type": "video",
+      "id": "video",
+      "label": "A Shopify-hosted video"
+    },
+
+{
+  "id" : "devtext",
+  "type" : "richtext",
+  "label" : "richtext"
+ 
+}
+  
+],
+
+"presets" : [
+{
+  "name" : "cstm-video-text"
+  
+  }
+]
+}
+{% endschema %}
+
