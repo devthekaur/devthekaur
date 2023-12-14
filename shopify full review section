@@ -1,0 +1,367 @@
+/**************************Review Section -mct******************\
+
+1. Step 1:- In Edit code  Click on the add a new section. Add the name of the section as ''Custom-review-seciton".
+ 
+
+2. Step2:- Paste the below code in custom-review-section after that save the section:-
+<style>
+  .aus_reviews_all .slick-next:before,   .aus_reviews_all .slick-prev:before {
+    font-size: 24px;
+    line-height: 1;
+    opacity: .75;
+    color: #000;
+}
+  
+  .cstm.wrapper {
+    / max-width: 1200px; /
+    width: 100%;
+    max-width: 1200px !important;
+    margin: 0 auto;
+}
+
+.reviews img {
+    width: 100%;
+    max-width: 114px;
+    height: 19px;
+}
+ul.inline-list {
+    display: flex;
+    gap: 9px;
+}
+span.product_review_content strong {
+    / font-family: 'Archivo'; /
+    text-decoration: underline;
+}
+  .product_top_review {
+    padding: 16px 0px;
+}
+li {
+    list-style: none;
+}
+#aus-tp-rvs .content_heading{
+     font-size: 16px;
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+ #aus-tp-rvs .verified-text {
+    color: #6c6c85;
+    font-weight: 300;
+    font-size: 12px;
+}
+  #aus-tp-rvs .verified-badge-wrapper {
+    margin-top: 10px;
+}
+#aus-tp-rvs .verified-icon {
+    width: 14px;
+}
+ #aus-tp-rvs .verified-badge-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 3px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+}
+#aus-tp-rvs.cstm-review-box {
+    padding-top: 60px;
+     padding-bottom: 60px;
+}
+
+ #aus-tp-rvs .wrapper {
+    -webkit-transition: padding .3s ease,max-width .3s ease;
+    -moz-transition: padding .3s ease,max-width .3s ease;
+    -ms-transition: padding .3s ease,max-width .3s ease;
+    -o-transition: padding .3s ease,max-width .3s ease;
+    transition: padding .3s ease,max-width .3s ease;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1180px;
+}
+  #aus-tp-rvs .aus_review_container {
+    display: flex;
+    margin: .3%;
+    align-items: center;
+}
+  #aus-tp-rvs .TP-heading {
+    width: 20%;
+    text-align: center;
+    padding: 10px 0;
+}
+  #aus-tp-rvs .TP-heading .TP-text {
+    font-size: 13px;
+}
+#aus-tp-rvs .aus_reviews_all {
+    width: 80%;
+    padding: 0 2%;
+}
+
+  #aus-tp-rvs .us-post {
+     background: #FAFAFC !important;
+  margin: 10px 10px;
+    border-radius: 5px;
+    / box-shadow: 1px 1px 11px 2px rgb(0 0 0 / 16%); /
+}
+ #aus-tp-rvs .us-post-info {
+    padding: 20px 15px;
+}
+  #aus-tp-rvs .str-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  #aus-tp-rvs .aus_t_svg {
+    flex-direction: column;
+}
+  #aus-tp-rvs .aus_t_svg {
+    display: flex;
+}
+  #aus-tp-rvs .str-rating p {
+    font-size: 12px;
+    font-weight: 400;
+}
+ #aus-tp-rvs .us-post h5 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .01em;
+    color: grey;
+}
+.rev p {
+    font-size: 12px;
+    margin-top: -10px;
+}
+    h3.content_heading {
+    font-size: 14px;
+    font-weight: 600;
+}
+ 
+@media screen and (max-width: 767px) {
+  #aus-tp-rvs .wrapper {
+    padding-left: 16px!important;
+    padding-right: 16px!important;
+}
+  #aus-tp-rvs .aus_review_container {
+    flex-direction: column;
+}
+  #aus-tp-rvs .TP-heading {
+    width: 100%;
+}
+  #aus-tp-rvs .aus_reviews_all {
+    width: 100%;
+}
+  #aus-tp-rvs.cstm-review-box {
+    margin-top: -86px !important;
+}
+
+
+  #aus-tp-rvs .us-post h5 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .01em;
+    color: grey;
+    margin-bottom: -16px;
+    margin-top: -13px;
+}
+  #aus-tp-rvs .content_heading {
+    font-size: 14px!important;
+ 
+}
+  #aus-tp-rvs .aus_t_svg {
+ width: 50% ;
+}
+
+}
+     
+button.slick-next.slick-arrow {
+  display: block !important;
+}
+
+button.slick-prev.slick-arrow {
+  display: block !important;
+}
+span.reviews {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+  </style>
+  
+ <div class="cstm-review-box" id="aus-tp-rvs">
+  <div class="cstm wrapper">
+    <div class="aus_review_width">
+      <div class="aus_review_container">
+        <div class="TP-heading">
+     
+          
+          
+            {% if section.settings.subheading !=blank %}
+          <h2 class="TP-title"><b>{{ section.settings.subheading }}</b></h2>
+          <svg class="star-rating dkt" width="1068" height="200" viewBox="0 0 1068 200" style="height: 30px;width: auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0V200H200V0H0ZM130 127.5L143 166.5L100 135.5L57 165.5L73 115.5L30.5 84H83.5L100 33.5L116.5 84H169.5L101 134.5L130 127.5Z" fill="#00B67B"></path>
+            <path d="M217 0V200H417V0H217ZM347 127.5L360 166.5L317 135.5L274 165.5L290 115.5L247.5 84H300.5L317 33.5L333.5 84H386.5L318 134.5L347 127.5Z" fill="#00B67B"></path>
+            <path d="M434 0V200H634V0H434ZM564 127.5L577 166.5L534 135.5L491 165.5L507 115.5L464.5 84H517.5L534 33.5L550.5 84H603.5L535 134.5L564 127.5Z" fill="#00B67B"></path>
+            <path d="M651 0V200H851V0H651ZM781 127.5L794 166.5L751 135.5L708 165.5L724 115.5L681.5 84H734.5L751 33.5L767.5 84H820.5L752 134.5L781 127.5Z" fill="#00B67B"></path>
+            <path d="M868 0V200H1068V0H868ZM998 127.5L1011 166.5L968 135.5L925 165.5L941 115.5L898.5 84H951.5L968 33.5L984.5 84H1037.5L969 134.5L998 127.5Z" fill="#00B67B"></path>
+            <path d="M968 0V33.5L984.5 84H1037.5L969 134.5L998 127.5L1011 166.5L968 135.5V200H1068V0H968Z" fill="#DBDBDD"></path>
+          </svg>
+           {% endif %}
+          
+          <div class="TP-text"><p>{{ section.settings.content }}</p></div>
+         {% if section.settings.starimage == true %}
+          <div class="star-image-logo">{{ section.settings.starlogo |img_url |img_tag }}</div>
+           {% endif %}
+ </div>
+        <div class="aus_reviews_all">
+          <div class="aus_review_slider">
+                   {%- for block in section.blocks -%}
+                  <div class="us-post">
+                <div class="us-post-info">
+                  <div class="str-rating">
+                    <div class="aus_t_svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="" data-name="Calque 2" viewBox="0 0 1068 200" style="height: 18px;">
+                      <defs><linearGradient id=""><stop offset="0%" stop-color="#00b67b"></stop><stop offset="0%" stop-color="#dbdce4" stop-opacity="1"></stop></linearGradient><style>.filled {fill: #00b67b;}.empty {fill: #dbdce4;}</style></defs><path class="filled" d="M0,0V200H200V0ZM130,127.5l13,39-43-31-43,30,16-50L30.5,84h53L100,33.5,116.5,84h53L101,134.5Z"></path><path class="filled" d="M217,0V200H417V0ZM347,127.5l13,39-43-31-43,30,16-50L247.5,84h53L317,33.5,333.5,84h53L318,134.5Z"></path><path class="filled" d="M434,0V200H634V0ZM564,127.5l13,39-43-31-43,30,16-50L464.5,84h53L534,33.5,550.5,84h53L535,134.5Z"></path><path class="filled" d="M651,0V200H851V0ZM781,127.5l13,39-43-31-43,30,16-50L681.5,84h53L751,33.5,767.5,84h53L752,134.5Z"></path><path class="filled" d="M868,0V200h200V0ZM998,127.5l13,39-43-31-43,30,16-50L898.5,84h53L968,33.5,984.5,84h53L969,134.5Z"></path>
+                    </svg>
+                    <div class="verified-badge-wrapper">
+                        <img src="https://cdn.shopify.com/s/files/1/0667/6869/9616/files/verified-badge.svg?v=1667239046" loading="lazy" alt="" class="verified-icon">
+                        <div class="verified-text">Verified</div>
+                    </div>
+                    </div>
+                    <p>{{block.settings.date}}</p>
+                  </div>
+                   <h3 class="content_heading">{{block.settings.title}}</h3>
+                  <div class="rev"><p>{{ block.settings.rcontent}}</p></div>
+                  <h5>{{ block.settings.author }}</h5>
+                </div>
+              </div>
+              {% endfor %}    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+                    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css"> 
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('.aus_review_slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        speed: 300,
+        infinite: true,
+        autoplay: false,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 2,
+              arrows: true,
+              dots: false,
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              arrows: true,
+              dots: false,
+              centerMode: true,
+            }
+          }
+        ]
+      });
+    });
+  </script>
+  
+{% schema %}
+  {
+    "name": "Product Reviews Section",
+    "settings": [
+      {
+      "type":"text",
+      "id":"subheading",
+      "label":"Review Sub Heading"
+      },
+      {
+      "type":"richtext",
+      "id":"content",
+      "label":"Review Content"
+      },
+       {
+      "type":"image_picker",
+      "id":"starlogo",
+      "label":"Image"
+      },
+        {
+      "type":"checkbox",
+      "id":"starimage",
+      "label":"Disable The Trustpilot Image"
+      }
+      
+    ],
+      "blocks" : [
+	    {
+        "type": "text",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Review Title"
+          },
+           {
+            "type": "richtext",
+            "id": "rcontent",
+            "label": "Review Content"
+          },
+           {
+            "type": "text",
+            "id": "author",
+            "label": "Review Author"
+           },
+          {
+            "type": "text",
+            "id": "date",
+            "label": "Review date"
+           },
+           {
+          "type": "range",
+          "id": "font_size",
+          "min": 3,
+          "max": 5,
+          "label": "Review Star",
+         "default": 5
+         }
+        ]
+      }
+    ],
+    "presets": [
+    {
+      "name": "Product Reviews Section"
+    }
+  ]
+  }
+{% endschema %}
+3. Step 3:-  Moving to the theme.liquid file add Custom-review-seaction paste following   code above the  {% section 'footer' %} footer section.
+{% if template contains "product" %}
+        {% section 'Custom-review-seciton' %}
+        {% endif %}
+ 
+
+4. Step 4:- In customized theme the Product Review Section is automatically added.
+5. Step 5:- In the customized theme you can fill in the data in Product Review Section as per your requirements.
