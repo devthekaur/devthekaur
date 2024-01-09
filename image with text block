@@ -1,0 +1,64 @@
+
+
+<div class="hero">
+  <div class="wrapper">
+    <div class="custom-main-section">
+ {% for block in section.blocks %} 
+   <div class="hero__image-wrapper">
+    <img  id="hero__image" src="{{ block.settings.cstm-image | img_url: 'master' }}" alt="{{ product.title }}" />
+  </div>
+   <div class="hero__text">
+    <p>{{ block.settings.textfirst }}</p>
+   <a href=" {{ block.settings.btnurl }}" class="button">
+     <span class="custom-btn-image btn btn--primary" >{{ block.settings.btntext }}</span>
+</a>
+    </div>
+  {% endfor %}
+    </div>
+  </div>
+  </div>
+
+ 
+
+{% schema %}
+  {
+    "name": "custom-mct-image-text",
+    "settings": [
+    ],
+      "blocks" : [
+	    {
+        "type": "text",
+        "name": "Cstm Image and Text",
+        "settings": [
+              {
+                 
+      "type": "image_picker",
+      "id": "cstm-image",
+      "label": "Background Image"
+    }, 
+       {
+      "type": "richtext",
+      "id": "textfirst",
+      "label": "First Text"
+    },
+          {
+            "type":"url",
+            "id":"btnurl",
+            "label":"Button Url"
+          },
+    {
+      "type": "text",
+      "id": "btntext",
+      "label": "Button Text"
+    }
+        ]
+      }
+    ],
+    "presets": [
+    {
+      "name": "custom-mct-image-text"
+    }
+  ]
+  }
+{% endschema %}
+
