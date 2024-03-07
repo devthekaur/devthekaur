@@ -1,0 +1,6 @@
+  {{ item.product.price | money }}
+{{ item.product.compare_at_price | money }}
+<div class="badge dbtfy-discount-saved__item" data-variant-id="{{ variant.id }}">
+    <span class="material-icons-outlined">local_offer</span>
+    Du Sparst <span class="money">{{ item.variant.compare_at_price | minus: item.variant.price | money }}</span>
+</div>
