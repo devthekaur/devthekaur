@@ -1,0 +1,14 @@
+<div class="directorist-thumb-top-left">
+    <?php 
+    // Check if the custom select value exists
+    $custom_select_value = get_post_meta( get_the_ID(), '_custom-select', true );
+    if (!empty($custom_select_value)) :
+    
+    // Check if badges are present
+    $badge_present = /* your condition to check if badges are present */;
+    ?>
+    <div class="category-section<?php if (!$badge_present) echo ' no-badges'; ?>"> <!-- Add class 'no-badges' if badges are not present -->
+        <?php echo esc_html($custom_select_value); ?>
+    </div>
+    <?php endif; ?>
+</div>
