@@ -1,0 +1,19 @@
+<style>
+.custombuttons {
+  background: {{section.settings.color_accent2}} !important;
+}
+</style>
+
+   {
+      "type": "header",
+      "content": "ATC button Background color"
+    },
+    {
+  "type": "color",
+  "id": "color_accent",
+  "label": "Buttons color",
+  "default": "#FFFFFF"
+},
+
+
+
