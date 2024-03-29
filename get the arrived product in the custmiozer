@@ -1,0 +1,42 @@
+<div class="cstm-product-with-text-price">
+  <div class="custom-product-image">
+{% for block in section.blocks %}
+   {% assign product = all_products[block.settings.product] %}
+   {% assign product_image = product.images | first %}
+   {% if product_image %}
+      <img src="{{ product_image.src | product_img_url: 'grande' }}" >
+      {{ product.title }}
+    {% endif %}
+{% endfor %}
+ </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "cstm-product-section",
+  "settings": [
+ ],
+"blocks": [
+{
+"type": "new-arrival",
+"name": "New Arrival",
+"settings": [
+{
+"type": "product",
+ "id": "product",
+"label": "Product"
+}
+
+]
+ }
+],
+
+  "presets": [
+    {
+      "name": "cstm-product-section"
+    }
+  ]
+}
+{% endschema %}
