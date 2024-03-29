@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="responsive">
+    <div class="product-sec">
+      <h1>{{ section.settings.title }}</h1>
+    </div>
+
+    <div class="product-slider" id="slick-slider">
+      {% for product in collections['all'].products %}
+        <div class="product-slide">
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.title }}">
+            <h3>{{ product.title }}</h3>
+           
+            <p>{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "product-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "product-section"
+    }
+  ]
+}
+{% endschema %}
