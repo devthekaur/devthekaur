@@ -1,0 +1,19 @@
+ <div class="mct-choose-kit">
+  {% if product.metafields.custom.choose_kit %}
+    <p class="line-item-property__field2">
+      <label for="kit-selection">Choose Kit</label>
+      <div class="mct-selection-input">
+        <select id="kit-selection" class="required" name="properties[{{product.metafields.custom.choose_kit}}]">
+         <option value="Michigan Preschool">Michigan Preschool</option>
+     <option value="H.O.T.V.">H.O.T.V.</option>
+     <option value="Industrial">Industrial</option>
+     <option value="Ophthalmic Prescreening">Ophthalmic Prescreening</option>
+     <option value="Driver Rehabilitation">Driver Rehabilitation</option>
+     <option value="International">International</option>
+     <option value="Patti Pic">Patti Pic</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+    </p>
+  {% endif %}
+</div>
