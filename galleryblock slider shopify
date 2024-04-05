@@ -1,0 +1,171 @@
+969817<style>
+.tabcontent img {
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 217px;
+    height: 218px;
+    object-fit: cover;
+    object-position: center top;
+}
+  .custom-main-heading-gallery {
+    margin-top: 60px;
+    /* margin-bottom: 60px !important; */
+}
+  .gallery-slider.slick-initialized.slick-slider.slick-dotted ul.slick-dots {
+    top: 100%;
+}
+  .gallery-heading h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+  .gallery-pargh span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+</style>
+<div class="custom-gallery-section">
+  <div class="page-width ">
+       <div class="custom-main-heading-gallery">
+      <div class="gallery-heading">
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
+      <div class="gallery-pargh">
+        <span>{{ section.settings.pargh }}</span>
+      </div>
+       </div>
+    <div class="gallery-slider">
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'Category1' -%}
+        <div id="Cat1" class="tabcontent">
+          {{ block.settings.image1 |img_url:'medium' |img_tag }}
+            {{ block.settings.image12 |img_url:'medium' |img_tag }}
+            {{ block.settings.image13 |img_url:'medium' |img_tag }}
+           </div>
+      {%- when 'Category2' -%}
+        <div id="Cat2" class="tabcontent">
+  {{ block.settings.image21 |img_url:'medium' |img_tag }}
+           {{ block.settings.image22 |img_url:'medium' |img_tag }}
+           {{ block.settings.image23 |img_url:'medium' |img_tag }}
+         
+        </div>
+      {%- when 'Category3' -%}
+        <div id="Cat3" class="tabcontent">
+  {{ block.settings.image2 |img_url:'medium' |img_tag }}
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+  </div>
+    
+</div>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('.gallery-slider').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: false,
+      dots: true,
+      arrows: true,
+      autoplaySpeed: 2000
+      
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Custom Gallery images",
+  "settings": [
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Enter Heading Here"
+    },
+    {
+      "type":"text",
+      "id":"pargh",
+      "label":"Enter Text here"
+    }
+  ],
+    "blocks": [
+    {
+      "type": "Category1",
+      "name": "Category1",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Image 1"
+        },
+           {
+          "type": "image_picker",
+          "id": "image12",
+          "label": "Image 1"
+        },
+           {
+          "type": "image_picker",
+          "id": "image13",
+          "label": "Image 1"
+        },
+           {
+          "type": "image_picker",
+          "id": "image14",
+          "label": "Image 1"
+        }
+      
+      ]
+    },
+    {
+      "type": "Category2",
+      "name": "Category2",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image21",
+          "label": "Image 1"
+        },
+         {
+          "type": "image_picker",
+          "id": "image22",
+          "label": "Image 1"
+        },
+         {
+          "type": "image_picker",
+          "id": "image23",
+          "label": "Image 1"
+        },
+         {
+          "type": "image_picker",
+          "id": "image24",
+          "label": "Image 1"
+        }
+      
+      ]
+    },
+    {
+      "type": "Category3",
+      "name": "Category3",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Image 1"
+        }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Gallery images"
+    }
+  ]
+}
+
+{% endschema %}
