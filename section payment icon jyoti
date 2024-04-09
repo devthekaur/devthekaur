@@ -1,0 +1,52 @@
+ {
+        "type": "header",
+        "content": "Payment Icons"
+      },
+       {
+        "type": "image_picker",
+        "id": "icon1",
+        "label": "Add Here Payment icon" 
+     },
+        {
+        "type": "image_picker",
+        "id": "icon2",
+        "label": "Add Here Payment icon" 
+     },
+        {
+        "type": "image_picker",
+        "id": "icon3",
+        "label": "Add Here Payment icon" 
+     },
+        {
+        "type": "image_picker",
+        "id": "icon4",
+        "label": "Add Here Payment icon" 
+     },
+        {
+        "type": "image_picker",
+        "id": "icon5",
+        "label": "Add Here Payment icon" 
+     },
+        {
+        "type": "image_picker",
+        "id": "icon6",
+        "label": "Add Here Payment icon" 
+     },
+      
+  
+  
+  <div class="cstm-wrapper">
+    <div class="custom-main-section">
+     <div class="hero__image-wrapper">
+     {% if section.settings.icon1 != blank %}
+   {{ section.settings.icon1 | img_url | img_tag }}
+   {% endif %}
+       {{ section.settings.icon1 |img_url |img_tag }}
+       {{ section.settings.icon2 |img_url |img_tag }}
+       {{ section.settings.icon3 |img_url |img_tag }}
+       {{ section.settings.icon4 |img_url |img_tag }}
+       {{ section.settings.icon5 |img_url |img_tag }}
+       {{ section.settings.icon6 |img_url |img_tag }}
+        </div>
+      </div>
+  </div>
