@@ -1,0 +1,116 @@
+  <style>
+    a.mct-a-tag {
+      color: black;
+    }
+  </style>
+<!-- HTML -->
+{% for field in product.metafields.custom.addonproduct.value %}
+  <h3>{{ field.description }}</h3>
+  <!-- <span>{{ field | json }}</span> -->
+  <input type="checkbox" data-variant-id="{{ field.variants[0].id }}" class="addon-checkbox" data-id="addon-{{ field.variants[0].id }}" data-title="{{ field.title }}" data-price="{{ field.price | money }}">
+  <a class="mct-a-tag">{{ field.title }}</a>
+{% endfor %}
+
+
+
+<!-- jQuery Library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script>
+// Function to handle adding items to the cart
+function addToCart(items) {
+  var formData = {
+    'items': items
+  };
+
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (response.ok) {
+      // Cart updated successfully
+      console.log('Items added to cart');
+    } else {
+      // Error adding to cart
+      console.error('Error adding items to cart');
+    }
+  })
+  .catch(error => {
+    console.error('Error adding items to cart:', error);
+  });
+}
+
+// Function to handle checkbox change event
+document.querySelectorAll('.addon-checkbox').forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    var checkedItems = [];
+    
+    // Loop through all checkboxes to collect checked items
+    document.querySelectorAll('.addon-checkbox:checked').forEach(checkedCheckbox => {
+      var variantId = checkedCheckbox.dataset.variantId;
+      var title = checkedCheckbox.dataset.title;
+      var price = parseFloat(checkedCheckbox.dataset.price.replace(/[^0-9.-]+/g,"")); // Remove non-numeric characters from price and parse as float
+      
+      // Add checked item to the array
+      checkedItems.push({
+        'id': variantId,
+        'quantity': 1
+      });
+    });
+
+    // Call addToCart function if there are checked items
+    if (checkedItems.length > 0) {
+      addToCart(checkedItems);
+    }
+  });
+});
+
+</script>
+
+<script>
+
+$(document).ready(function () {
+  // Function to update total price
+  function updateTotalPrice() {
+    var totalPrice = 0;
+
+    // Add main product price
+    var mainProductPrice = parseFloat($('#main-price1').text().replace('$', '').replace(',', ''));
+    totalPrice += mainProductPrice;
+
+    // Add addon prices
+    $('.addon-checkbox').each(function () {
+      if ($(this).is(':checked')) {
+        var addonPrice = parseFloat($(this).data('price').replace('$', '').replace(',', ''));
+        totalPrice += addonPrice;
+      }
+    });
+
+    // Update the displayed price
+    $('#main-price1').text('$' + totalPrice.toFixed(2));
+  }
+
+  // Checkbox change event
+  $('.addon-checkbox').on('change', function () {
+    var addonPrice = parseFloat($(this).data('price').replace('$', '').replace(',', ''));
+    var totalPrice = parseFloat($('#main-price1').text().replace('$', '').replace(',', ''));
+
+    // If checkbox is checked, add the addon price; otherwise, subtract it
+    if ($(this).is(':checked')) {
+      totalPrice += addonPrice;
+    } else {
+      totalPrice -= addonPrice;
+    }
+
+    // Update the displayed price
+    $('#main-price1').text('$' + totalPrice.toFixed(2));
+  });
+});
+</script>
+
+
+
