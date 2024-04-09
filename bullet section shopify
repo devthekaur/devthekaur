@@ -1,0 +1,98 @@
+   <div class="product-block">
+            <div id="kopstorm-snippet-9">
+<div class="setting" id="{% if section.settings.toggleBullets %}toggleBullets{% endif %}">
+  <input type="checkbox" id="toggleBulletsCheckbox" {% if section.settings.toggleBullets %}checked{% endif %}>
+  
+<div id="green_message" class="flex-div-wrapper">
+<div class="flex-div">
+<!-- <span style="margin-right: 14px; margin-left: 3px;" class="green-dot"></span> -->
+  <img style="margin-right: 14px; margin-left: 3px;" class="green-dot"src="{{ section.settings.bulletimage1 | img_url:'master' }}">
+   <span style="color:#2c9814; font-weight: bold;" id="cstm-bullets" class="bullets">{{ section.settings.textbullet1 }}</span>
+<!-- <span style="color:#2c9814; font-weight: bold;" class="bullets">In stock ready to be shipped</span> -->
+</div>
+</div>
+
+
+<div class="flex-div-2">
+  <div class="bullets">
+    <img  width="20" height="20" style="display: ; width: 20px; height: 20px; margin-right: 10px;" class="myicon" src="{{ section.settings.bulletimage2 | img_url:'master' }}">
+<!-- <img width="20" height="20" style="display: ; width: 20px; height: 20px; margin-right: 10px;" class="myicon" src="https://cdn.shopify.com/s/files/1/0786/8917/3833/files/free-delivery.svg?v=1704548122"> -->
+<span>{{ section.settings.textbullet2 }}</span>
+    <!-- <span>ALWAYS Free delivery</span> -->
+  </div>
+</div>
+      
+<div class="flex-div-2">
+   <div class="bullets">
+     <img  width="20" height="20" style="display: ; width: 20px; height: 20px; margin-right: 10px;" class="myicon" src="{{ section.settings.bulletimage3 | img_url:'master' }}">
+<!-- <img width="20" height="20" style="display: ; width: 20px; height: 20px; margin-right: 10px;" class="myicon" src="https://cdn.shopify.com/s/files/1/0786/8917/3833/files/trust.svg?v=1704548122"> -->
+<span>{{ section.settings.textbullet3 }}</span>
+     <!-- <span>Money back guarantee</span> -->
+   </div>
+</div>
+  <div class="flex-div-2">
+   <div class="bullets">
+     <img  width="20" height="20" style="display: ; width: 20px; height: 20px; margin-right: 10px;" class="myicon" src="{{ section.settings.bulletimage4 | img_url:'master' }}">
+<!-- <img width="20" height="20" style="display: ; width: 20px; height: 20px; margin-right: 10px;" class="myicon" src="https://cdn.shopify.com/s/files/1/0786/8917/3833/files/trust.svg?v=1704548122"> -->
+<span>{{ section.settings.textbullet4 }}</span>
+     <!-- <span>Money back guarantee</span> -->
+   </div>
+</div>
+</div>
+</div>
+                    </div>
+
+{
+        "type": "header",
+        "content": "Bullets Text"
+      },
+      {
+        "type": "richtext",
+        "id": "textbullet1",
+        "label": "Bullet Text" 
+     },
+      {
+        "type": "image_picker",
+        "id": "bulletimage1",
+        "label": "Bullet Image" 
+     },
+      {
+        "type": "richtext",
+        "id": "textbullet2",
+        "label": "Bullet Text" 
+     },
+       {
+        "type": "image_picker",
+        "id": "bulletimage2",
+        "label": "Bullet Image" 
+     },
+      {
+        "type": "richtext",
+        "id": "textbullet3",
+        "label": "Bullet Text" 
+     },
+       {
+        "type": "image_picker",
+        "id": "bulletimage3",
+        "label": "Bullet Image" 
+     },
+      {
+        "type": "richtext",
+        "id": "textbullet4",
+        "label": "Bullet Text" 
+     },
+       {
+        "type": "image_picker",
+        "id": "bulletimage4",
+        "label": "Bullet Image" 
+     },
+      {
+        "type": "header",
+        "content": "Checkbox show icon"
+      },
+      {
+        "type": "checkbox",
+        "id": "toggleBullets",
+        "label": "Enable bulletpoint icons",
+         "default": true
+      },
