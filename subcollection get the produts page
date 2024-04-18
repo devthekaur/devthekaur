@@ -1,0 +1,18 @@
+<div class="custom-get-products-collection">
+  {% for product in collections.jurken.products %}
+    <div class="product-item">
+      <!-- Display the main product image -->
+      {% if product.images.size > 0 %}
+        <div class="product-image">
+          <img src="{{ product.images.first.src | img_url: 'medium' }}" alt="{{ product.title }}">
+        </div>
+      {% endif %}
+      
+      <!-- Display the product title and price -->
+      <div class="product-info">
+        <h2>{{ product.title }}</h2>
+        <p>Price: {{ product.price }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
