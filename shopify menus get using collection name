@@ -1,0 +1,88 @@
+<style>
+    / Styles for main menu /
+    .main-menu {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .main-menu > li {
+      position: relative;
+    }
+    .main-menu > li > .sub-menu {
+     // display: none;
+     // position: absolute;
+      top: 100%;
+      //left: 0;
+    }
+    / Show sub-menu on click /
+    .main-menu > li.clicked > .sub-menu {
+      display: block;
+    }
+    / Styles for sub-menu /
+    .sub-menu {
+      list-style-type: none;
+     // padding: 0;
+      margin: 0;
+    }
+    .sub-menu > li {
+      position: relative;
+    }
+    .sub-menu > li > .sub-sub-menu {
+      display: none;
+      //position: absolute;
+      //top: 0;
+      //left: 100%;
+    }
+    / Show sub-sub-menu on click /
+    .sub-menu > li.clicked > .sub-sub-menu {
+      display: block;
+    }
+    / Styles for sub-sub-menu /
+    .sub-sub-menu {
+      list-style-type: none;
+     // padding: 0;
+      margin: 0;
+    }
+li.active > .sub-sub-menu {
+    display: block;
+   
+}
+.sub-sub-menu:has(>li.active) {
+  display: block;
+}
+.sub-sub-menu:has(>li.active) li a {
+  font-weight:700;
+}
+
+
+li.active > a{
+  color:red;
+}
+.active-collection-ul{font-weight:700;}
+  </style>
+ 
+<ul class="main-menu">
+ {% assign collection_handle = collection.handle %}
+  {% assign linklists = linklists.collection_sidebar.links %}
+  {% for link in linklists %}
+    <li {% if link.handle == collection_handle %} class="active"{% endif %}>
+      <a href="{{ link.url }}">{{ link.title }}</a>
+      {% if link.links.size > 0 %}
+        <ul class="sub-menu">
+          {% for sublink in link.links %}
+            <li {% if sublink.handle == collection_handle %} class="active"{% endif %}>
+              <a href="{{ sublink.url }}">{{ sublink.title }}{{ sublink.handle }}  </a>
+              {% if sublink.links.size > 0 %}
+                <ul class="sub-sub-menu">
+                  {% for sub_sublink in sublink.links %}
+                    <li {% if sub_sublink.handle == collection_handle %} class="active"{% endif %}><a href="{{ sub_sublink.url }}">{{ sub_sublink.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
