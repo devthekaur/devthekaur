@@ -1,0 +1,191 @@
+<style>
+  .image-container .img {
+    display: block;
+    max-width: 100%;
+  }
+.custom-image-flex-text-flexs {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+  .containers {
+    display: grid;
+    place-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    --position: 50%;
+    width: 40%;
+    height: 40%  !important;
+}
+  .image-container {
+    max-width: 800px;
+    max-height: 90vh;
+    aspect-ratio: 1/1;
+  }
+
+  .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  .image-before {
+    position: absolute;
+    inset: 0;
+    width: var(--position);
+    filter: grayscale(100%);
+  }
+
+  .slider {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    opacity: 0;
+    / for Firefox /
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider:focus-visible ~ .slider-button {
+    outline: 5px solid black;
+    outline-offset: 3px;
+  }
+
+  .slider-line {
+    position: absolute;
+    inset: 0;
+    width: .2rem;
+    height: 100%;
+    background-color: #fff;
+    / z-index: 10; /
+    left: var(--position);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .slider-button {
+    position: absolute;
+    background-color: #fff;
+   color: white !important;
+    padding: .5rem;
+    border-radius: 100vw;
+    display: grid;
+    place-items: center;
+    top: 50%;
+    left: var(--position);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    / z-index: 100; /
+    box-shadow: 1px 1px 1px hsl(0, 50%, 2%, .5);
+  }
+   @media only screen and (max-width: 767px) {
+     .custom-image-flex-text-flexs {
+    display: block !important;
+
+}
+       .containers {
+  
+    width: 100% !important;
+    height: 40%  !important;
+}
+   }
+</style>
+
+
+<div class="mct-cutom-image-flex-text-section">
+  <div class="page-width">
+    <div class="custom-image-flex-text-flexs">
+
+      <div class="containers">
+        <div class="image-container">
+        <img class="image-before slider-image" src="{{ section.settings.beforeimage | image_url }}"/>
+            <img class="image-after slider-image" src="{{ section.settings.afterimage | image_url }}"/>
+        </div>
+        <!-- step="10" -->
+        <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="slider" />
+        <div class="slider-line" aria-hidden="true"></div>
+        <div class="slider-button" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none"></rect>
+            <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+            <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+          </svg>
+        </div>
+      </div>
+    <div class="cstm-flex-image-text">
+        <div class="cstm-flex-image-heading">
+          <h2 class="image-with-text__heading inline-richtext h2">
+                    <strong>{{ section.settings.heading }}</strong>
+                  </h2>
+        </div>
+        <div class="custom-image-text-flex-content">
+          <div class="image-with-text__text rte body">
+                    <p>{{ section.settings.paragrah }}</p>
+                  </div>
+        </div>
+        <div class="custm-flex-image-content-button">
+          <a href="{{ section.settings.btnurl }}" class="button button--primary">
+                     {{ section.settings.btntext }}
+                    </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.slider').on('input', function() {
+      $('.containers').css('--position', $(this).val() + '%');
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "After before image flex",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "beforeimage",
+        "label":"Add image here"
+      },
+         {
+        "type": "image_picker",
+        "id": "afterimage",
+        "label":"Add image here"
+      },
+      {
+        "type": "text",
+        "id":"heading",
+        "label":"Enter Heading Here"
+      },
+      {
+        "type":"text",
+        "id":"paragrah",
+        "label":"Enter content here"
+      },
+      {
+        "type":"url",
+        "id":"btnurl",
+        "label":"Enter url here"
+      },
+      {
+        "type":"text",
+        "id":"btntext",
+        "label":"Enter btn text here"
+      }
+      
+    ],
+  "presets": [
+    {
+      "name": "After before image flex"
+    }
+  ]
+}
+{% endschema %}
