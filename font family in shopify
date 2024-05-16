@@ -1,0 +1,15 @@
+@font-face {
+  font-family: silk-extra-light;
+  src: url(https://cdn.shopify.com/s/files/1/0340/8725/files/Silk_Serif_ExtraLight.otf?v=1715860423);
+}
+@font-face {
+  font-family: acid-grotesk-light;
+  src: url(https://cdn.shopify.com/s/files/1/0340/8725/files/AcidGrotesk-Light.otf?v=1715860423);
+}
+.h0, .heading-font-stack, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: silk-extra-light;
+}
+
+body,p,span,li,a, button{
+    font-family: acid-grotesk-light;
+}
