@@ -1,0 +1,58 @@
+{%- when 'text' -%}
+                      <div class="product-block" {{ block.shopify_attributes }} {% if block.settings.custom_font == true %} style="font-size:{{block.settings.custom_font_size  }}px; color:{{ block.settings.custom_color }}  "{% endif %}>
+                        {{ block.settings.text }}
+                      </div>
+
+                        {
+          "type": "color",
+          "id": "custom_color",
+          "label": "Custom Color"
+        }
+
+
+
+        working on product cart text
+
+      billing with Sandeep Goyal id
+     project : https://www.misspoppydesignshop.com/
+     
+
+       {
+    "name": "Product Grid Text",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_custom_text",
+        "label": "Show custom text"
+      },
+      {
+        "type": "textarea",
+        "id": "custom_text",
+        "label": "Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "custom_font",
+        "label": "Custom Font size and color"
+      },
+      {
+        "type": "range",
+        "id": "custom_font_size",
+        "label": "Custom Font Size",
+        "max": 20,
+        "min": 8,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "custom_color",
+        "label": "Custom Color"
+      }
+    ]
+  }
+
+
+
+  
+  
